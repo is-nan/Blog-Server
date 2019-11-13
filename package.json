@@ -1,0 +1,27 @@
+{
+    "name": "nandate",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch-server": "nodemon --watch src/**/* -e ts,tsx --exec ts-node src/app.ts",
+        "build": "rm -rf dist && tsc"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "koa": "^2.8.2",
+        "koa-body": "^4.1.1",
+        "koa-router": "^7.4.0",
+        "mysql2": "^1.7.0",
+        "sequelize": "^5.19.4"
+    },
+    "devDependencies": {
+        "@types/koa": "^2.0.50",
+        "@types/koa-router": "^7.0.42",
+        "nodemon": "^1.19.3",
+        "ts-node": "^8.4.1",
+        "typescript": "^3.6.3"
+    }
+}
