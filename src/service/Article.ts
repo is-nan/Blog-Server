@@ -1,5 +1,6 @@
 import Models from '../models/index'
-
+import * as fs from 'fs'
+import * as path from 'path'
 export async function ServiceNewArticle<T>(data:any):Promise<T> {
     return await new Promise((resolve:any,reject:any)=>{
         if(!data.title||!data.content||!data.createdAt||!data.CategoryName){
@@ -37,7 +38,7 @@ export async function ServiceGetArticleList<T>():Promise<T> {
         ]
     })
 }
-export async function ServiceUpdateArticle<T>(data):Promise<T> {
+export async function ServiceUpdateArticle<T>(data:any):Promise<T> {
     return new Promise((resolve:any,reject:any)=>{
 
     })
@@ -59,5 +60,21 @@ export async function ServiceDeleteArticle<T>(data):Promise<T> {
                 reject(err)
             })
         }
+    })
+}
+
+export async function ServiceUploadImages<T>(ctx:any):Promise<T> {
+    //获取文件
+    const file=await ctx.request.files.file
+    // 创建可读流
+    const reader =await  fs.createReadStream(file.path)
+    let filePath=await  path.join(__dirname, '../images/') +file.name;
+    console.log(filePath)
+    // 创建可写流
+    const upStream =await fs.createWriteStream(filePath)
+    // // 可读流通过管道写入可写流
+    await reader.pipe(upStream);
+    return new Promise((resolve:any,reject:any)=>{
+        resolve(filePath)
     })
 }

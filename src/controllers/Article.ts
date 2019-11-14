@@ -1,5 +1,5 @@
 import {ServiceNewArticle,ServiceGetReleaseArticleList,
-    ServiceGetArticleList,ServiceDeleteArticle} from "../service/Article"
+    ServiceGetArticleList,ServiceDeleteArticle,ServiceUploadImages} from "../service/Article"
 
 export async function ControllersNewArticle(ctx:any,next) {
     await ServiceNewArticle(ctx.request.body)
@@ -75,4 +75,22 @@ export async function ControllersDeleteArticle(ctx:any,next:any) {
                 code:1
             }
         })
+}
+export async function ControllersUploadImages(ctx:any,next:any){
+    ServiceUploadImages(ctx)
+        .then((res)=>{
+            ctx.body={
+                data:res,
+                mess:'上传成功',
+                code:0
+            }
+        })
+        .catch((err)=>{
+            ctx.body={
+                err,
+                mess:'上传失败',
+                code:1
+            }
+        })
+    await next()
 }
