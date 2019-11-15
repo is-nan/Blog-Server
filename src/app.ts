@@ -1,6 +1,7 @@
 import * as Koa from 'koa'
 import * as KoaBody from 'koa-body'
 import * as Koastatic from 'koa-static';
+import * as koajwt from 'koa-jwt'
 import router from './router/index'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -9,6 +10,12 @@ const staticPath:string='../images/'
 app.use(Koastatic(
     path.join( __dirname, staticPath)
 ))
+//jwt鉴权
+// app.use(koajwt({
+//     secret: 'nana'
+// }).unless({
+//     path: []
+// }))
 app.use(KoaBody({
     multipart: true,
     formidable: {

@@ -75,9 +75,10 @@ export async function ControllersDeleteArticle(ctx:any,next:any) {
                 code:1
             }
         })
+    await next()
 }
 export async function ControllersUploadImages(ctx:any,next:any){
-    ServiceUploadImages(ctx)
+  await  ServiceUploadImages(ctx.request.files.file)
         .then((res)=>{
             ctx.body={
                 data:res,

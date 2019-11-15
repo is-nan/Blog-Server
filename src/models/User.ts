@@ -18,6 +18,10 @@ const User:any=sequelize.define('User',{
         allowNull:false,//不允许为空
         comment:'用户名'
     },
+    Token:{
+        type:Sequelize.STRING(100),
+        comment:'Token鉴权验证'
+    },
     password:{
         type:Sequelize.STRING(16),
         allowNull:false,//不允许为空
