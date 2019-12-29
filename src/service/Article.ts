@@ -3,6 +3,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 export async function ServiceNewArticle<T>(data: any): Promise<T> {
+    console.log(data)
     let Cover:any='www.nanbk.com'
     if(data.Cover){
        await ServiceUploadImages(data.Cover)
@@ -11,14 +12,15 @@ export async function ServiceNewArticle<T>(data: any): Promise<T> {
             })
     }
     return await new Promise((resolve: any, reject: any) => {
-        if (!data.title || !data.content || !data.createdAt || !data.CategoryName||!data.status) {
+        if (!data.title || !data.content || !data.createdAt || !data.Category||!data.status) {
             reject('参数错误，请检查！')
-        } else if (Object.keys(data.TagName.length < 1)) {
+        } else if (data.TagName.length < 1) {
             reject('标签错误，请检查！')
         } else {
-            const {title, content, createdAt, CategoryName, TagName,status} = data
+            const {title, content, createdAt, Category, TagName,status} = data
             const Tags = TagName.map(c => ({TagName: c}))
-            const Categories = {CategoryName}
+            const Categories = Category.map(c=>({CategoryName:c}))
+            console.log(Categories)
             resolve(
                 Models.Article.create(
                     {title, content, createdAt,Cover,status, Categories, Tags},
