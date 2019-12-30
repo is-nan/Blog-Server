@@ -3,27 +3,26 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 export async function ServiceNewArticle<T>(data: any): Promise<T> {
-    console.log(data)
     let Cover:any='www.nanbk.com'
     if(data.Cover){
-       await ServiceUploadImages(data.Cover)
-            .then((res)=>{
-                Cover=res
-            })
+       Cover=data.Cover
     }
     return await new Promise((resolve: any, reject: any) => {
-        if (!data.title || !data.content || !data.createdAt || !data.Category||!data.status) {
+        if (!data.title || !data.content || !data.Category||!data.status||!data.createdTime) {
             reject('参数错误，请检查！')
-        } else if (data.TagName.length < 1) {
+        } else if (data.TagName.length < 0) {
             reject('标签错误，请检查！')
-        } else {
-            const {title, content, createdAt, Category, TagName,status} = data
+        } else if(data.Category.length < 1&&data.Category.length>2){
+            reject('分类必须或只能有一个！')
+        }
+        else {
+            const {title, content, createdTime, Category, TagName,status} = data
             const Tags = TagName.map(c => ({TagName: c}))
             const Categories = Category.map(c=>({CategoryName:c}))
-            console.log(Categories)
+            console.log(Cover)
             resolve(
                 Models.Article.create(
-                    {title, content, createdAt,Cover,status, Categories, Tags},
+                    {title, content, createdTime,Cover,status, Categories, Tags},
                     {include: [Models.Category, Models.Tag]})
             )
         }
@@ -34,8 +33,8 @@ export async function ServiceGetReleaseArticleList<T>(): Promise<T> {
     return  Models.Article.findAll({
         where: {status: 1},
         include: [
-            {model: Models.Tag},
-            {model: Models.Category}
+            {model: Models.Tag,attributes:['TagName']},
+            {model: Models.Category,attributes:['CategoryName']}
         ]
     })
 }
@@ -96,6 +95,7 @@ export async function ServiceDeleteArticle<T>(data): Promise<T> {
 export async function ServiceUploadImages<T>(data: any): Promise<T> {
     //获取文件
     const file = await data
+    console.log(data)
     // 创建可读流
     const reader = await fs.createReadStream(file.path)
     let filePath = await path.join(__dirname, '../images/') + file.name;

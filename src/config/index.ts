@@ -8,7 +8,7 @@ interface Mysql{
 const config:Mysql={
     database:'Blog',
     username:'root',
-    password:'QWXP1208316514',
+    password:'root',
     host:'localhost',
     port:3306
 }

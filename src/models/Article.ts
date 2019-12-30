@@ -1,5 +1,6 @@
 import sequelize from '../sql/index'
 import * as Sequelize from "sequelize"
+import * as moment from "moment";
 const Article:any=sequelize.define('Article',{
     //表id
     id:{
@@ -27,10 +28,13 @@ const Article:any=sequelize.define('Article',{
         allowNull:false,//不允许为空
         comment:'内容'
     },
-    createdAt:{
+    createdTime:{
         type:Sequelize.DATE,
         allowNull:false,//不允许为空
-        comment:'创建时间'
+        comment:'创建时间',
+        get(){
+            return moment(this.getDataValue('createdTime')).format('YYYY-MM-DD HH:mm:ss');
+        }
     }
 })
 export default Article

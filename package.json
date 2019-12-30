@@ -17,6 +17,7 @@
         "koa-jwt": "^3.6.0",
         "koa-router": "^7.4.0",
         "koa-static": "^5.0.0",
+        "moment": "^2.24.0",
         "mysql2": "^1.7.0",
         "sequelize": "^5.19.4"
     },
