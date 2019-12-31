@@ -1,5 +1,6 @@
 import {ServiceNewArticle,ServiceGetReleaseArticleList,
-    ServiceGetArticleList,ServiceDeleteArticle,ServiceUploadImages} from "../service/Article"
+    ServiceGetArticleList,ServiceDeleteArticle,ServiceUploadImages,
+    ServiceUpdateArticleStatus,ServiceUpdateArticle} from "../service/Article"
 
 export async function ControllersNewArticle(ctx:any,next) {
     await ServiceNewArticle(ctx.request.body)
@@ -34,7 +35,7 @@ export async function ControllersGetReleaseArticle(ctx:any,next:any) {
             ctx.body={
                 err,
                 mess:'获取失败',
-                code:0
+                code:1
             }
         })
     await next()
@@ -52,11 +53,52 @@ export async function ControllersGetArticle(ctx:any,next:any) {
             ctx.body={
                 err,
                 mess:'获取失败',
-                code:0
+                code:1
             }
         })
     await next()
 }
+
+export async function ControllersUpdateArticleStatus(ctx:any,next:any) {
+    await ServiceUpdateArticleStatus(ctx.request.body)
+        .then((Promise)=>{
+            return Promise
+        })
+        .then((res)=>{
+            ctx.body={
+                mess:'修改成功',
+                code:0
+            }
+        })
+        .catch((err)=>{
+            ctx.body={
+                mess:'修改失败',
+                err,
+                code:1
+            }
+        })
+}
+
+export async function ControllersUpdateArticle(ctx:any,next:any) {
+    await ServiceUpdateArticle(ctx.request.body)
+        .then((Promise)=>{
+            return Promise
+        })
+        .then((res)=>{
+            ctx.body={
+                mess:'修改成功',
+                code:0
+            }
+        })
+        .catch((err)=>{
+            ctx.body={
+                mess:'修改失败',
+                err,
+                code:1
+            }
+        })
+}
+
 export async function ControllersDeleteArticle(ctx:any,next:any) {
     await ServiceDeleteArticle(ctx.request.body)
         .then((Promise)=>{

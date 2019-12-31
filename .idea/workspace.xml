@@ -3,32 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8dc2e96f-f13f-4fde-a0f5-01f4633dea06" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/is-ci" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/is-ci" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodemon" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/nodemon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodetouch" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/nodetouch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nopt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/nopt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/rc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/semver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-script" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsserver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsserver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/uuid" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/uuid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/which" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/which" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/braces.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/lib/braces.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/compilers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/lib/compilers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/parsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/lib/parsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/node_modules/extend-shallow/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/node_modules/extend-shallow/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/node_modules/extend-shallow/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/braces/node_modules/extend-shallow/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/Article.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Article.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/Article.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Article.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +86,9 @@
       <workItem from="1573788752045" duration="15521000" />
       <workItem from="1577627195219" duration="2050000" />
       <workItem from="1577672640532" duration="749000" />
-      <workItem from="1577684125085" duration="10678000" />
+      <workItem from="1577684125085" duration="10972000" />
+      <workItem from="1577759408835" duration="2127000" />
+      <workItem from="1577762497082" duration="9481000" />
     </task>
     <servers />
   </component>

@@ -18,6 +18,11 @@ const Article:any=sequelize.define('Article',{
         allowNull:false,//不允许为空
         comment:'标题'
     },
+    Author:{
+        type:Sequelize.STRING(20),
+        allowNull:false,//不允许为空
+        comment:'作者'
+    },
     status:{
         type:Sequelize.INTEGER,
         defaultValue:1,//默认为发布状态 1.未完成 2.完成
