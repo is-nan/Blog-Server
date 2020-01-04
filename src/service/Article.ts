@@ -72,8 +72,8 @@ export async function ServiceUpdateArticle<T>(data: any): Promise<T> {
         }
         else {
             const {title, content, createdTime, Category, TagName,status,Author,Cover} = data
-            const Tags = TagName.map(c => ({TagName: c}))
-            const Categories = Category.map(c=>({CategoryName:c}))
+            const Tags = TagName.map(c => ({TagName: c,ArticleId:data.id}))
+            const Categories = Category.map(c=>({CategoryName:c,ArticleId:data.id}))
             resolve(
                 Promise.all([
                     Models.Article.update({title, content, createdTime,status,Author,Cover},{ where: { id: data.id } }),
