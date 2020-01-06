@@ -1,4 +1,4 @@
-import  {ServiceNewLink,ServiceDeleteLink,ServiceGetLinkList} from "../service/Link"
+import  {ServiceNewLink,ServiceDeleteLink,ServiceGetLinkList,ServiceUpdateLink} from "../service/Link"
 
 export async function ControllersNewLink(ctx:any,next:any){
    await ServiceNewLink(ctx.request.body)
@@ -51,6 +51,27 @@ export async function ControllersDeleteLink(ctx:any,next:any) {
         .catch((err)=>{
             ctx.body={
                 mess:'删除失败',
+                code:1,
+                err
+            }
+        })
+    await next()
+}
+
+export async function ControllersUpdateLink(ctx:any,next:any) {
+    await ServiceUpdateLink(ctx.request.body)
+        .then((Promise)=>{
+            return Promise
+        })
+        .then((res)=>{
+            ctx.body={
+                mess:'修改成功',
+                code:0
+            }
+        })
+        .catch((err)=>{
+            ctx.body={
+                mess:'修改失败',
                 code:1,
                 err
             }
