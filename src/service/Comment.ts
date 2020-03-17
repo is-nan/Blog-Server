@@ -1,5 +1,7 @@
 import Models from '../models/index'
-
+import * as Sequelize from "sequelize"
+const Op = Sequelize.Op;
+//新增留言
 export async function ServiceNewComment(data:any) {
     return new Promise((resolve: any, reject: any)=>{
         if(!data.content||!data.username){
@@ -11,6 +13,7 @@ export async function ServiceNewComment(data:any) {
     })
 }
 
+//获取某文章评论
 export async function ServiceGetArticleComment(data:any) {
     return new Promise((resolve: any, reject: any)=>{
         if(!data.ArticleId){
@@ -24,12 +27,21 @@ export async function ServiceGetArticleComment(data:any) {
     })
 }
 
+//获取所有文章评论
+export async function ServiceGetAllArticleComment() {
+    return new Promise((resolve: any, reject: any)=>{
+        resolve(Models.Comment.findAll({where:{ArticleId:{[Op.ne]: null}}}))
+    })
+}
+
+//获取博客留言
 export async function ServiceGetComment() {
     return new Promise((resolve: any, reject: any)=>{
         resolve(Models.Comment.findAll({where:{ArticleId:null}}))
     })
 }
 
+//删除留言or评论
 export async function ServiceDeleteComment(data:any) {
     return new Promise((resolve: any, reject: any)=>{
         if(!data.id){

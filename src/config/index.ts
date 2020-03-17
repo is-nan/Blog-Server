@@ -5,6 +5,11 @@ interface Mysql{
     host:string,
     port:number
 }
+interface Token {
+    name:string,
+    _id:string,
+
+}
 const config:Mysql={
     database:'Blog',
     username:'root',

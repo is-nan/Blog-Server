@@ -1,5 +1,6 @@
 import Models from '../models/index'
 
+//新增友情链接
 export  async function ServiceNewLink<T>(data: any): Promise<T> {
     return new Promise((resolve: any, reject: any)=>{
         if(!data.name||!data.url){
@@ -13,12 +14,14 @@ export  async function ServiceNewLink<T>(data: any): Promise<T> {
     })
 }
 
+//获取友情链接
 export async function ServiceGetLinkList() {
     return new Promise((resolve: any, reject: any)=>{
         resolve(Models.Link.findAll())
     })
 }
 
+//删除友情链接
 export async function ServiceDeleteLink<T>(data: any): Promise<T> {
     return new Promise((resolve: any, reject: any)=>{
         if(!data.id){

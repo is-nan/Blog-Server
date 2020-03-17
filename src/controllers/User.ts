@@ -2,9 +2,6 @@ import {ServiceLogin} from "../service/User"
 
 export async function ControllersLogin(ctx:any,next:any) {
     await ServiceLogin(ctx.request.body)
-        .then((Promise)=>{
-            return Promise
-        })
         .then((res)=>{
             ctx.body={
                 mess:res,

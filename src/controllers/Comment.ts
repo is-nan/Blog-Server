@@ -1,4 +1,10 @@
-import { ServiceNewComment,ServiceGetArticleComment,ServiceGetComment,ServiceDeleteComment} from '../service/Comment'
+import {
+    ServiceNewComment,
+    ServiceGetArticleComment,
+    ServiceGetComment,
+    ServiceDeleteComment,
+    ServiceGetAllArticleComment
+} from '../service/Comment'
 
 export async function ControllersNewComment(ctx:any,next:any) {
     await ServiceNewComment(ctx.request.body)
@@ -39,6 +45,24 @@ export async function ControllersGetArticleComment(ctx:any,next:any) {
             }
         })
     await next()
+}
+
+//获取所有文章评论
+export async function ControllersGetAllArticleComment(ctx:any,next:any) {
+    await ServiceGetAllArticleComment()
+        .then((res)=>{
+            ctx.body={
+                code:0,
+                mess:'获取成功',
+                data:res
+            }
+        })
+        .catch((err)=>{
+            ctx.body={
+                code:1,
+                mess:'获取失败'
+            }
+        })
 }
 
 export async function ControllersGetComment(ctx:any,next:any) {
