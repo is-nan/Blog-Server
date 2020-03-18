@@ -1,7 +1,7 @@
 import {ServiceLogin} from "../service/User"
 
 export async function ControllersLogin(ctx:any,next:any) {
-    await ServiceLogin(ctx.request.body)
+    await ServiceLogin(ctx)
         .then((res)=>{
             ctx.body={
                 mess:res,

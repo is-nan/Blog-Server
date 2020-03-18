@@ -19,7 +19,7 @@ const User:any=sequelize.define('User',{
         comment:'用户名'
     },
     Token:{
-        type:Sequelize.STRING(100),
+        type:Sequelize.STRING(200),
         comment:'Token鉴权验证'
     },
     password:{

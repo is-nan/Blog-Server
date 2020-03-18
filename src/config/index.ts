@@ -6,15 +6,17 @@ interface Mysql{
     port:number
 }
 interface Token {
-    name:string,
-    _id:string,
-
+    secret:string,//密钥
+    expiresIn:string//token有效时间
 }
-const config:Mysql={
+export const ConfigJwt:Token={
+    secret:'nayg',
+    expiresIn:'48h'
+}
+export const Config:Mysql={
     database:'Blog',
     username:'root',
-    password:'QWXP1208316514',
+    password:'root',
     host:'localhost',
     port:3306
 }
-export default config

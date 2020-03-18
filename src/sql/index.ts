@@ -1,15 +1,15 @@
 import { Sequelize } from 'sequelize'
-import config from '../config/index'
+import {Config} from '../config/index'
 const sequelize=new Sequelize(
     //库-账号-密码
-    config.database,
-    config.username,
-    config.password,
+    Config.database,
+    Config.username,
+    Config.password,
     //连接配置
     {
         dialect:'mysql',
-        host:config.host,
-        port:config.port,
+        host:Config.host,
+        port:Config.port,
         pool: {
             max: 50,                             // 最大值
             min: 5,                          // 最小值
