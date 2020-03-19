@@ -1,3 +1,12 @@
+/*
+ * @Author: 南岸有归
+ * @Date: 2020-03-18 09:50:10
+ * @LastEditTime: 2020-03-19 14:53:26
+ * @LastEditors: 南岸有归
+ * @Description: 标签业务层
+ * @FilePath: \admind:\react\Blog-Server\src\service\Tag.ts
+ * @
+ */
 import Models from '../models/index'
 import * as sequelize from "sequelize";
 

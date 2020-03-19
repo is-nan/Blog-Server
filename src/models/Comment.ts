@@ -1,3 +1,12 @@
+/*
+ * @Author: 南岸有归
+ * @Date: 2020-03-18 09:50:10
+ * @LastEditTime: 2020-03-19 14:55:56
+ * @LastEditors: 南岸有归
+ * @Description: 留言/评论数据模型
+ * @FilePath: \admind:\react\Blog-Server\src\models\Comment.ts
+ * @
+ */
 import sequelize from '../sql/index'
 import * as Sequelize from "sequelize"
 const Comment:any=sequelize.define('Comment',{

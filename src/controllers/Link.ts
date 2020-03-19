@@ -1,3 +1,12 @@
+/*
+ * @Author: 南岸有归
+ * @Date: 2020-03-18 09:50:08
+ * @LastEditTime: 2020-03-19 14:51:43
+ * @LastEditors: 南岸有归
+ * @Description: 友情链接操作层
+ * @FilePath: \admind:\react\Blog-Server\src\controllers\Link.ts
+ * @
+ */
 import  {ServiceNewLink,ServiceDeleteLink,ServiceGetLinkList,ServiceUpdateLink} from "../service/Link"
 
 export async function ControllersNewLink(ctx:any,next:any){

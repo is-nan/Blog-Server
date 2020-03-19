@@ -3,9 +3,10 @@ import { ControllersNewComment,ControllersGetArticleComment,ControllersGetCommen
 import * as Router from 'koa-router'
 
 const Comment:any=new Router()
-Comment.post('/NewComment',ControllersNewComment)
-Comment.post('/GetArticleComment',ControllersGetArticleComment)
-Comment.get('/GetComment',ControllersGetComment)
-Comment.post('/DeleteComment',ControllersDeleteComment)
-Comment.get('/GetAllArticleComment',ControllersGetAllArticleComment)
+Comment
+.post('/NewComment',ControllersNewComment)
+.post('/GetArticleComment',ControllersGetArticleComment)
+.get('/GetComment',ControllersGetComment)
+.post('/DeleteComment',ControllersDeleteComment)
+.get('/GetAllArticleComment',ControllersGetAllArticleComment)
 export default Comment

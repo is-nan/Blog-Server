@@ -3,8 +3,9 @@ import {ControllersNewLink,ControllersDeleteLink,ControllersGetLinkList,Controll
 
 const Link:any=new Router()
 
-Link.post('/NewLink',ControllersNewLink)
-Link.get('/GetLinkList',ControllersGetLinkList)
-Link.post('/DeleteLink',ControllersDeleteLink)
-Link.post('/UpdateLink',ControllersUpdateLink)
+Link
+.post('/NewLink',ControllersNewLink)
+.get('/GetLinkList',ControllersGetLinkList)
+.post('/DeleteLink',ControllersDeleteLink)
+.post('/UpdateLink',ControllersUpdateLink)
 export default Link

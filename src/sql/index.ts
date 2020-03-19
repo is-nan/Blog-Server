@@ -1,3 +1,12 @@
+/*
+ * @Author: 南岸有归
+ * @Date: 2020-03-18 09:50:10
+ * @LastEditTime: 2020-03-19 14:54:50
+ * @LastEditors: 南岸有归
+ * @Description: sequelize-Mysql连接
+ * @FilePath: \admind:\react\Blog-Server\src\sql\index.ts
+ * @
+ */
 import { Sequelize } from 'sequelize'
 import {Config} from '../config/index'
 const sequelize=new Sequelize(

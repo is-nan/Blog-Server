@@ -6,11 +6,12 @@ import { ControllersNewArticle,ControllersGetReleaseArticle,
 const Article:any=new Router()
 
 
-Article.post('/NewArticle',ControllersNewArticle)
-Article.get('/GetReleaseArticle',ControllersGetReleaseArticle)
-Article.get('/GetArticle',ControllersGetArticle)
-Article.post('/UpdateArticleStatus',ControllersUpdateArticleStatus)
-Article.post('/UpdateArticle',ControllersUpdateArticle)
-Article.post('/DeleteArticle',ControllersDeleteArticle)
-Article.post('/UploadImages',ControllersUploadImages)
+Article
+.post('/NewArticle',ControllersNewArticle)
+.get('/GetReleaseArticle',ControllersGetReleaseArticle)
+.get('/GetArticle',ControllersGetArticle)
+.post('/UpdateArticleStatus',ControllersUpdateArticleStatus)
+.post('/UpdateArticle',ControllersUpdateArticle)
+.post('/DeleteArticle',ControllersDeleteArticle)
+.post('/UploadImages',ControllersUploadImages)
 export default Article

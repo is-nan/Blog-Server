@@ -1,3 +1,12 @@
+/*
+ * @Author: 南岸有归
+ * @Date: 2020-03-18 09:50:10
+ * @LastEditTime: 2020-03-19 14:53:19
+ * @LastEditors: 南岸有归
+ * @Description: 友情链接业务层
+ * @FilePath: \admind:\react\Blog-Server\src\service\Link.ts
+ * @
+ */
 import Models from '../models/index'
 
 //新增友情链接

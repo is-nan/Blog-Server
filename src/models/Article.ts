@@ -1,3 +1,12 @@
+/*
+ * @Author: 南岸有归
+ * @Date: 2020-03-18 09:50:10
+ * @LastEditTime: 2020-03-19 14:55:25
+ * @LastEditors: 南岸有归
+ * @Description: 文章数据模型
+ * @FilePath: \admind:\react\Blog-Server\src\models\Article.ts
+ * @
+ */
 import sequelize from '../sql/index'
 import * as Sequelize from "sequelize"
 import * as moment from "moment";

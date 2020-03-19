@@ -1,3 +1,12 @@
+/*
+ * @Author: 南岸有归
+ * @Date: 2020-03-18 17:03:49
+ * @LastEditTime: 2020-03-19 14:55:04
+ * @LastEditors: 南岸有归
+ * @Description: 日志生成
+ * @FilePath: \admind:\react\Blog-Server\src\log\index.ts
+ * @
+ */
 import * as path from 'path'
 import * as log4js from 'koa-log4'
 log4js.configure({
