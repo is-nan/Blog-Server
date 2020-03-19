@@ -27,7 +27,7 @@ export const ConfigJwt:Token={
 export const Config:Mysql={
     database:'Blog',
     username:'root',
-    password:'root',
+    password:'QWXP1208316514',
     host:'localhost',
     port:3306
 }

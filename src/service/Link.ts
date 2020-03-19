@@ -1,17 +1,37 @@
 /*
  * @Author: 南岸有归
  * @Date: 2020-03-18 09:50:10
- * @LastEditTime: 2020-03-19 14:53:19
+ * @LastEditTime: 2020-03-19 21:50:00
  * @LastEditors: 南岸有归
  * @Description: 友情链接业务层
- * @FilePath: \admind:\react\Blog-Server\src\service\Link.ts
+ * @FilePath: \Blog-Server\src\service\Link.ts
  * @
  */
 import Models from '../models/index'
-
-//新增友情链接
-export  async function ServiceNewLink<T>(data: any): Promise<T> {
-    return new Promise((resolve: any, reject: any)=>{
+/**
+ * @description: 博客友情链接业务层类
+ * @param {type} 
+ * @return: 
+ */
+//新增友情链接接口类型
+interface LinkInterface{
+    id:number,
+    name:string,
+    url:string,
+    email:string
+}
+//删除友情链接接口类型
+interface LinkIdInterface{
+    id:number
+}
+class ServiceLink{
+    /**
+     * @description: 新增博客友情链接,返回一个Promise
+     * @param LinkInterface
+     * @return: Promise
+     */    
+    static ServiceNewLink<T>(data: LinkInterface): Promise<T> {
+    return new Promise((resolve: Function, reject: Function)=>{
         if(!data.name||!data.url){
             reject('参数错误')
         }
@@ -22,17 +42,21 @@ export  async function ServiceNewLink<T>(data: any): Promise<T> {
         }
     })
 }
-
-//获取友情链接
-export async function ServiceGetLinkList() {
-    return new Promise((resolve: any, reject: any)=>{
-        resolve(Models.Link.findAll())
-    })
+/**
+ * @description: 获取友情链接,返回一个Promise
+ * @param {type} 
+ * @return: Promise
+ */    
+static ServiceGetLinkList() {
+    return Models.Link.findAll()
 }
-
-//删除友情链接
-export async function ServiceDeleteLink<T>(data: any): Promise<T> {
-    return new Promise((resolve: any, reject: any)=>{
+/**
+ * @description: 删除友情链接,返回一个Promise
+ * @param LinkIdInterface
+ * @return: LinkIdInterface
+ */
+static ServiceDeleteLink<T>(data: LinkIdInterface): Promise<T> {
+    return new Promise((resolve: Function, reject: Function)=>{
         if(!data.id){
             reject('Id有误')
         }
@@ -41,10 +65,13 @@ export async function ServiceDeleteLink<T>(data: any): Promise<T> {
         }
     })
 }
-
-//修改友情链接
-export async function ServiceUpdateLink<T>(data:any): Promise<T> {
-    return new Promise((resolve: any, reject: any)=>{
+/**
+ * @description: 修改友情链接,返回一个Promise
+ * @param LinkInterface
+ * @return: Promise
+ */
+static ServiceUpdateLink<T>(data:LinkInterface): Promise<T> {
+    return new Promise((resolve: Function, reject: Function)=>{
         if(!data.id){
             reject('Id有误')
         }else if(!data.name||!data.url){
@@ -52,7 +79,10 @@ export async function ServiceUpdateLink<T>(data:any): Promise<T> {
         }
         else {
             resolve(Models.Link.update({name:data.name,url:data.url,email:data.email},{where: {id:data.id}}))
-            resolve(Models.Article.update({status:data.status},{ where: { id: data.id } }))
         }
     })
 }
+}
+
+
+export default ServiceLink
