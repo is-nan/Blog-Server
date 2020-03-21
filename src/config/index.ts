@@ -1,4 +1,4 @@
-/*
+﻿/*
  * @Author: 南岸有归
  * @Date: 2020-03-18 09:50:08
  * @LastEditTime: 2020-03-19 17:06:45
@@ -27,7 +27,7 @@ export const ConfigJwt:Token={
 export const Config:Mysql={
     database:'Blog',
     username:'root',
-    password:'QWXP1208316514',
+    password:'root',
     host:'localhost',
     port:3306
 }

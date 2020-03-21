@@ -20,7 +20,7 @@ interface CommentInterface{
     url:string,
     email:string,
     ArticleId?:number,
-    CommentId:number
+    CommentId?:number
 }
 //获取某文章评论接口类型
 interface CommentArticleIdInterface{
